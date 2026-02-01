@@ -24,7 +24,7 @@ const banners = [
     bg: 'from-emerald-100 to-teal-50',
     emoji: '🚚',
     title: 'Free Shipping',
-    subtitle: 'On all orders above ₹499',
+    subtitle: 'On all orders above ₹999',
     cta: 'Browse All',
   },
 ];
@@ -43,7 +43,7 @@ export default function Hero() {
     <>
       {/* Announcement Bar */}
       <div className="bg-amber-600 text-white text-center text-xs font-semibold py-1.5 px-3 tracking-wide">
-        🚚 FREE SHIPPING ON ORDERS ABOVE ₹499/-
+        🚚 FREE SHIPPING ON ORDERS ABOVE ₹999/-
       </div>
 
       {/* Banner Carousel */}
