@@ -18,15 +18,11 @@ export default function ProductCard({ product, onAddToCart }) {
         className="relative w-full bg-gray-100 rounded flex items-center justify-center"
         style={{ aspectRatio: '1 / 1' }}
       >
-        {product.image ? (
-          <img
+        <img
             src={product.image}
             alt={product.name}
             className="absolute inset-0 w-full h-full object-cover rounded"
           />
-        ) : (
-          <span className="text-4xl sm:text-5xl">{product.emoji}</span>
-        )}
         {product.badge && (
           <div className="absolute top-1.5 left-1.5 bg-amber-600 text-white px-2 py-0.5 rounded text-xs font-bold shadow-sm">
             {product.badge}

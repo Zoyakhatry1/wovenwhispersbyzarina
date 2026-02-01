@@ -294,7 +294,6 @@ export default function ProductManager() {
                 className="bg-gradient-to-r from-rose-50 to-pink-50 rounded-2xl p-6 border-2 border-rose-100 hover:border-rose-300 transition-all"
               >
                 <div className="flex items-start gap-4">
-                  <div className="text-5xl">{product.emoji}</div>
                   
                   <div className="flex-1">
                     <div className="flex items-start justify-between mb-2">

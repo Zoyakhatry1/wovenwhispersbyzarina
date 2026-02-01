@@ -23,7 +23,7 @@ export default function Cart({ isOpen, onClose, cart, updateQuantity, removeFrom
     message += `Address: ${customerDetails.address}, ${customerDetails.city} - ${customerDetails.pincode}\n\n`;
     message += `*Order Items:*\n`;
     cart.forEach((item, index) => {
-      message += `${index + 1}. ${item.name} (${item.emoji})\n`;
+      message += `${index + 1}. ${item.name}\n`;
       message += `   Qty: ${item.quantity} × ₹${item.price} = ₹${item.quantity * item.price}\n`;
     });
     message += `\n*Total Amount: ₹${getTotalPrice()}*\n\n`;
@@ -36,7 +36,7 @@ export default function Cart({ isOpen, onClose, cart, updateQuantity, removeFrom
       alert('Please fill in all required details');
       return;
     }
-    const whatsappNumber = '919876543210'; // Replace with actual number
+    const whatsappNumber = '916303152569'; // Replace with actual number
     window.open(`https://wa.me/${whatsappNumber}?text=${generateWhatsAppMessage()}`, '_blank');
   };
 
@@ -74,7 +74,6 @@ export default function Cart({ isOpen, onClose, cart, updateQuantity, removeFrom
               <div className="space-y-2 mb-4">
                 {cart.map((item) => (
                   <div key={item.id} className="bg-amber-50 rounded-lg p-2 flex items-center gap-2 border border-amber-100">
-                    <span className="text-2xl flex-shrink-0">{item.emoji}</span>
                     <div className="flex-1" style={{ minWidth: 0 }}>
                       <p className="font-bold text-slate-800 text-xs truncate">{item.name}</p>
                       <p className="text-amber-700 font-semibold text-xs">₹{item.price}</p>
