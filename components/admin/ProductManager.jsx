@@ -11,11 +11,9 @@ export default function ProductManager() {
   const [draggedIndex, setDraggedIndex] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
-    description: '',
     price: '',
     original_price: '',
     sale_price: '',
-    emoji: '🎁',
     badge: '',
     image: '',
     sold_out: false,
@@ -116,11 +114,9 @@ export default function ProductManager() {
   const resetForm = () => {
     setFormData({
       name: '',
-      description: '',
       price: '',
       original_price: '',
       sale_price: '',
-      emoji: '🎁',
       badge: '',
       image: '',
       sold_out: false,
@@ -132,11 +128,9 @@ export default function ProductManager() {
     setEditingProduct(product);
     setFormData({
       name: product.name,
-      description: product.description,
       price: product.price.toString(),
       original_price: product.original_price ? product.original_price.toString() : '',
       sale_price: product.sale_price ? product.sale_price.toString() : '',
-      emoji: product.emoji,
       badge: product.badge || '',
       image: product.image || '',
       sold_out: product.sold_out || false,
@@ -189,7 +183,7 @@ export default function ProductManager() {
     setDraggedIndex(null);
   };
 
-  const emojiOptions = ['🎁', '👶', '🧸', '🌸', '🧣', '🛋️', '💐', '☕', '🐕', '🎀', '🧶', '💝', '🌺', '🦋', '🌈'];
+  // const emojiOptions = ['🎁', '👶', '🧸', '🌸', '🧣', '🛋️', '💐', '☕', '🐕', '🎀', '🧶', '💝', '🌺', '🦋', '🌈'];
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -318,39 +312,7 @@ export default function ProductManager() {
               )}
             </div>
 
-            <div>
-              <label className="block text-gray-700 font-semibold mb-2">
-                Description *
-              </label>
-              <textarea
-                name="description"
-                value={formData.description}
-                onChange={handleInputChange}
-                rows="4"
-                className="w-full px-4 py-3 rounded-xl border-2 border-rose-200 focus:border-rose-400 focus:outline-none transition-all resize-none"
-                placeholder="Detailed product description..."
-                required
-              />
-            </div>
-
             <div className="grid md:grid-cols-3 gap-6">
-              <div>
-                <label className="block text-gray-700 font-semibold mb-2">
-                  Emoji
-                </label>
-                <select
-                  name="emoji"
-                  value={formData.emoji}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 rounded-xl border-2 border-rose-200 focus:border-rose-400 focus:outline-none transition-all"
-                >
-                  {emojiOptions.map(emoji => (
-                    <option key={emoji} value={emoji}>
-                      {emoji} {emoji}
-                    </option>
-                  ))}
-                </select>
-              </div>
 
               <div>
                 <label className="block text-gray-700 font-semibold mb-2">
