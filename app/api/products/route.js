@@ -14,7 +14,7 @@ export async function GET() {
       const { data, error } = await supabase
         .from('products')
         .select('*')
-        .order('id', { ascending: true });
+        .order('display_order', { ascending: true });
 
       if (error) throw error;
       
